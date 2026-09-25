@@ -1,0 +1,709 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cellfie Smart | Celulares, acessórios e assistência técnica em Curitiba</title>
+<meta name="description" content="Cellfie Smart Acessórios e Eletrônicos — celulares, acessórios, película de hidrogel na hora e assistência técnica. Unidades Pilarzinho e Condor Barreirinha, Curitiba. Parcelamento facilitado no boleto.">
+<link rel="icon" type="image/jpeg" href="logo-curta.jpeg">
+<meta property="og:image" content="logo-oficial-completa.jpeg">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; frame-src https://maps.google.com; base-uri 'self'; form-action 'self'">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --preto:#0A0A0A;--amarelo:#FBBB1B;--amarelo-2:#D59F17;--branco:#FFFFFF;
+  --cinza:#C8C8C8;--cinza-escuro:#9A9A9A;--claro:#F4F4F1;--card:#161616;--linha:#2A2A2A;
+  --radius:28px;--radius-sm:18px;
+  --shadow:0 24px 48px rgba(0,0,0,.4);
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --header-h:88px;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Poppins',system-ui,sans-serif;background:var(--preto);color:var(--branco);-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%;height:auto;display:block}
+h1,h2,h3,p{margin:0}
+html{scroll-behavior:smooth}
+::selection{background:var(--amarelo);color:var(--preto)}
+.wrap{max-width:1440px;margin:0 auto;padding:0 clamp(20px,6vw,96px)}
+.pill{display:inline-block;border-radius:999px;font-weight:700;text-decoration:none;cursor:pointer;transition:transform .3s var(--ease),box-shadow .3s var(--ease),background .3s var(--ease),color .3s var(--ease);border:none;font-family:inherit}
+.pill:focus-visible{outline:3px solid var(--branco);outline-offset:3px}
+.pill:hover{transform:translateY(-3px)}
+.wa-trigger{background:none;border:none;font:inherit;color:inherit;text-align:left;-webkit-appearance:none;appearance:none;padding:0;margin:0;cursor:pointer}
+#pelicula,#parcelamento,#servicos,#unidades,#contato{scroll-margin-top:var(--header-h)}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}}
+
+/* Barra de progresso */
+.progress{position:fixed;top:0;left:0;height:3px;background:var(--amarelo);width:0%;z-index:1001;transition:width .1s linear}
+
+/* Topo / header */
+header{position:sticky;top:0;z-index:1000;background:rgba(10,10,10,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.06);transition:box-shadow .3s var(--ease),background .3s var(--ease)}
+header.is-scrolled{background:rgba(10,10,10,.94);box-shadow:0 12px 30px rgba(0,0,0,.35)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-top:22px;padding-bottom:22px;min-height:var(--header-h)}
+.logo{display:flex;align-items:center;gap:12px;color:var(--branco);text-decoration:none;font-size:24px;font-weight:500;letter-spacing:3px}
+.logo img{height:44px;width:auto;border-radius:8px;transition:transform .4s var(--ease)}
+.logo:hover img{transform:rotate(-8deg) scale(1.08)}
+.logo b{font-weight:800}
+.footer-logo{display:inline-block;margin-bottom:8px;transition:transform .4s var(--ease)}
+.footer-logo:hover{transform:scale(1.03)}
+.footer-logo img{width:180px;border-radius:14px}
+.tag{font-size:12px;letter-spacing:3px;color:var(--amarelo);font-weight:500}
+
+nav.nav{display:flex;align-items:center;gap:36px}
+nav.nav a{color:var(--cinza);text-decoration:none;font-size:15px;font-weight:600;letter-spacing:.3px;position:relative;padding:6px 0}
+nav.nav a::after{content:'';position:absolute;left:50%;bottom:-2px;width:0;height:2px;background:var(--amarelo);transition:width .3s var(--ease),left .3s var(--ease)}
+nav.nav a:hover{color:var(--branco)}
+nav.nav a:hover::after{width:100%;left:0}
+.header-actions{display:flex;align-items:center;gap:20px}
+
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;z-index:1002}
+.hamburger span{width:24px;height:2px;background:var(--branco);border-radius:2px;transition:transform .3s var(--ease),opacity .3s var(--ease)}
+.hamburger.is-active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.is-active span:nth-child(2){opacity:0}
+.hamburger.is-active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+.mobile-menu{position:fixed;inset:var(--header-h) 0 0 0;background:rgba(10,10,10,.98);backdrop-filter:blur(14px);z-index:999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:32px;opacity:0;visibility:hidden;transform:translateY(-12px);transition:opacity .35s var(--ease),transform .35s var(--ease),visibility .35s var(--ease)}
+.mobile-menu.is-open{opacity:1;visibility:visible;transform:translateY(0)}
+.mobile-menu a{color:var(--branco);text-decoration:none;font-size:26px;font-weight:700}
+.mobile-menu a:hover{color:var(--amarelo)}
+
+/* Reveal ao rolar */
+[data-reveal]{opacity:0;transform:translateY(32px);transition:opacity .8s var(--ease),transform .8s var(--ease);transition-delay:calc(var(--i,0) * 90ms)}
+[data-reveal].in-view{opacity:1;transform:translateY(0)}
+
+/* Hero */
+.hero{position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.2fr 1fr;align-items:center;gap:48px;padding-top:56px;padding-bottom:56px;perspective:1200px}
+.local{align-self:flex-start;border:1px solid #3A3A3A;border-radius:999px;padding:8px 18px;font-size:13px;letter-spacing:3px;color:#D4D4D4;display:inline-block}
+.hero-txt{display:flex;flex-direction:column;gap:28px;align-items:flex-start}
+.hero h1{font-size:clamp(44px,6vw,84px);line-height:1.02;font-weight:800;letter-spacing:-2px}
+.hero h1 span{color:var(--amarelo)}
+.hero p{font-size:clamp(16px,1.6vw,22px);line-height:1.5;color:var(--cinza);max-width:560px}
+.chips{display:flex;gap:14px;flex-wrap:wrap}
+.chip-a{background:var(--amarelo);color:var(--preto);padding:14px 26px;font-size:18px}
+.chip-a:hover{background:var(--amarelo-2);box-shadow:0 16px 34px rgba(251,187,27,.28)}
+.chip-b{border:2px solid var(--amarelo);color:var(--amarelo);padding:12px 26px;font-size:18px;background:transparent}
+.chip-b:hover{background:var(--amarelo);color:var(--preto)}
+.nota{font-size:14px;color:var(--cinza-escuro)}
+.hero-media{position:relative;transition:transform .4s var(--ease);transform-style:preserve-3d}
+.hero:hover .hero-media{transform:rotate(2deg) scale(1.02)}
+.hero-arte{width:100%;display:block;position:relative}
+.hero-logo{position:absolute;top:50%;left:50%;width:34%;transform:translate(-50%,-50%) rotate(-8deg);mix-blend-mode:lighten;pointer-events:none}
+.orbit-ring{position:absolute;top:50%;left:50%;width:112%;aspect-ratio:1;transform:translate(-50%,-50%);border:2px dashed rgba(251,187,27,.35);border-radius:50%;animation:spin 42s linear infinite;pointer-events:none}
+.orbit-ring::before{content:'';position:absolute;top:-4px;left:50%;width:8px;height:8px;margin-left:-4px;background:var(--amarelo);border-radius:50%;box-shadow:0 0 12px rgba(251,187,27,.8)}
+@keyframes spin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+.hero-glow{position:absolute;top:50%;left:50%;width:44%;aspect-ratio:1;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(251,187,27,.5),transparent 70%);filter:blur(8px);animation:glow 3.6s ease-in-out infinite;pointer-events:none}
+@keyframes glow{0%,100%{opacity:.5;transform:translate(-50%,-50%) scale(1)}50%{opacity:.9;transform:translate(-50%,-50%) scale(1.15)}}
+.float-badge__ico{width:26px;height:26px;border-radius:50%;background:var(--amarelo);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.float-badge__ico svg{width:14px;color:var(--preto)}
+
+.float-badge{position:absolute;display:flex;align-items:center;gap:8px;background:var(--branco);color:var(--preto);padding:12px 18px;border-radius:999px;font-weight:700;font-size:14px;text-decoration:none;box-shadow:0 14px 30px rgba(0,0,0,.35);animation:floaty 3.2s ease-in-out infinite;transition:transform .3s var(--ease),box-shadow .3s var(--ease),background .3s var(--ease),color .3s var(--ease);white-space:nowrap}
+.float-badge svg{width:18px;flex-shrink:0}
+.float-badge:hover{animation-play-state:paused;transform:translateY(-6px) scale(1.06);box-shadow:0 20px 40px rgba(0,0,0,.45)}
+.float-badge--1{top:4%;left:0;animation-delay:0s}
+.float-badge--1:hover{background:var(--preto);color:var(--amarelo)}
+.float-badge--2{top:16%;right:0;background:var(--preto);color:var(--amarelo);border:2px solid var(--amarelo);animation-delay:.6s}
+.float-badge--2:hover{background:var(--amarelo);color:var(--preto);border-color:var(--amarelo)}
+.float-badge--2:hover .float-badge__ico{background:var(--preto)}
+.float-badge--2:hover .float-badge__ico svg{color:var(--amarelo)}
+.float-badge--3{bottom:6%;left:0;animation-delay:1.2s}
+.float-badge--3:hover{background:var(--preto);color:var(--amarelo)}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+/* Marquee */
+.marquee{background:var(--card);border-top:1px solid var(--linha);border-bottom:1px solid var(--linha);overflow:hidden;padding:16px 0}
+.marquee-track{display:flex;width:max-content;gap:56px;animation:marquee 26s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee span{display:flex;align-items:center;gap:56px;font-size:13px;letter-spacing:3px;font-weight:600;color:var(--cinza-escuro);white-space:nowrap}
+.marquee span b{color:var(--amarelo)}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* Hidrogel */
+.hidrogel{background:var(--amarelo);color:var(--preto)}
+.hidrogel .wrap{display:grid;grid-template-columns:1.3fr 1fr;align-items:center;gap:64px;padding-top:80px;padding-bottom:80px}
+.sec-txt{display:flex;flex-direction:column;gap:24px;align-items:flex-start}
+.kicker{font-size:14px;letter-spacing:4px;font-weight:600}
+.hidrogel h2,.parcel h2,.unidades h2{font-size:clamp(38px,4.8vw,68px);line-height:1.04;font-weight:800;letter-spacing:-1.5px}
+.hidrogel p{font-size:clamp(16px,1.5vw,21px);line-height:1.5;max-width:560px}
+.btn-preto{background:var(--preto);color:var(--amarelo);padding:14px 28px;font-size:18px}
+.btn-preto:hover{background:#1c1c1c;box-shadow:0 16px 34px rgba(0,0,0,.3)}
+.hidrogel-arte{transition:transform .5s var(--ease)}
+.hidrogel:hover .hidrogel-arte{transform:scale(1.03)}
+
+/* Parcelamento */
+.parcel .wrap{display:grid;grid-template-columns:1fr 1.4fr;align-items:center;gap:64px;padding-top:88px;padding-bottom:88px}
+.parcel .kicker{color:var(--amarelo)}
+.parcel p{font-size:19px;line-height:1.5;color:var(--cinza)}
+.cards{display:grid;grid-template-columns:1fr;gap:24px}
+.card{border-radius:var(--radius);padding:36px;min-height:360px;display:flex;flex-direction:column;justify-content:space-between;gap:24px;text-decoration:none;transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
+.card:hover{transform:translateY(-10px);box-shadow:var(--shadow)}
+.card-a{background:var(--amarelo);color:var(--preto)}
+.card-b{background:var(--card);border:2px solid var(--amarelo)}
+.card-b .rot,.card-b .num{color:var(--amarelo)}
+.card-b .desc{color:var(--cinza)}
+.rot{font-size:15px;letter-spacing:3px;font-weight:600}
+.desc{font-size:17px;line-height:1.4;font-weight:500;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.boleto-card{gap:22px}
+.boleto-top{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.boleto-barcode{width:100px;height:28px;fill:#0A0A0A;opacity:.55}
+.boleto-title{font-size:clamp(28px,3.4vw,38px);font-weight:800;letter-spacing:-1px;line-height:1.15}
+.boleto-benefits{display:flex;flex-direction:column;gap:12px;flex:1;list-style:none;margin:0;padding:0}
+.boleto-benefits li{display:flex;align-items:center;gap:10px;font-weight:600;font-size:15.5px}
+.boleto-benefits svg{width:20px;height:20px;flex-shrink:0;background:rgba(10,10,10,.1);border-radius:50%;padding:3px}
+.desc svg{flex-shrink:0;width:20px;transition:transform .3s var(--ease)}
+.card:hover .desc svg{transform:translateX(6px)}
+
+/* Serviços */
+.servicos{background:var(--claro);color:var(--preto)}
+.servicos .wrap{padding-top:88px;padding-bottom:88px;display:flex;flex-direction:column;gap:48px}
+.serv-topo{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.servicos h2{font-size:clamp(36px,4vw,56px);line-height:1.05;font-weight:800;letter-spacing:-1.5px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.serv{background:var(--preto);color:var(--branco);border-radius:24px;padding:36px;display:flex;flex-direction:column;gap:18px;min-height:300px;text-decoration:none;transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
+.serv:hover{transform:translateY(-10px);box-shadow:var(--shadow)}
+.serv h3{font-size:28px;font-weight:700}
+.serv p{font-size:17px;line-height:1.5;color:var(--cinza);flex:1}
+.serv-cta{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:700;color:var(--amarelo)}
+.serv-cta svg{width:16px;transition:transform .3s var(--ease)}
+.serv:hover .serv-cta svg{transform:translateX(6px)}
+.ico{width:64px;height:64px;border-radius:18px;background:var(--amarelo);display:flex;align-items:center;justify-content:center;transition:transform .4s var(--ease)}
+.serv:hover .ico{transform:rotate(-8deg) scale(1.08)}
+.serv.destaque{background:var(--amarelo);color:var(--preto)}
+.serv.destaque p{color:#2A2A2A}
+.serv.destaque .serv-cta{color:var(--preto)}
+.serv.destaque .ico{background:var(--preto)}
+
+/* Unidades */
+.unidades{background:var(--preto)}
+.unidades .wrap{padding-top:88px;padding-bottom:88px;display:flex;flex-direction:column;gap:48px}
+.unid-topo{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.unid-topo .kicker{color:var(--amarelo)}
+.unid-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+.unit-card{background:var(--card);border:2px solid var(--linha);border-radius:var(--radius);overflow:hidden;transition:transform .4s var(--ease),box-shadow .4s var(--ease),border-color .4s var(--ease)}
+.unit-card:hover{transform:translateY(-8px);box-shadow:var(--shadow);border-color:var(--amarelo)}
+.unit-map{height:220px;width:100%;position:relative;background:#0d0d0d}
+.unit-map iframe{width:100%;height:100%;border:0;filter:grayscale(1) contrast(1.05) brightness(.9);transition:filter .5s var(--ease)}
+.unit-card:hover .unit-map iframe{filter:grayscale(0) contrast(1) brightness(1)}
+.unit-body{padding:32px}
+.unit-body h3{display:flex;align-items:center;gap:10px;font-size:24px;font-weight:700;margin-bottom:16px}
+.unit-body h3 svg{width:22px;color:var(--amarelo)}
+.unit-addr{display:flex;gap:10px;color:var(--cinza);font-size:15px;line-height:1.5;margin-bottom:10px}
+.unit-addr svg{flex-shrink:0;width:18px;margin-top:2px;color:var(--amarelo)}
+.unit-note{display:block;color:var(--cinza-escuro);font-size:13px;margin-top:2px}
+.unit-phone{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px;margin-bottom:22px}
+.unit-phone svg{width:18px;color:var(--amarelo)}
+.unit-actions{display:flex;flex-wrap:wrap;gap:12px}
+.btn-amarelo-sm{background:var(--amarelo);color:var(--preto);padding:11px 20px;font-size:14px;display:inline-flex;align-items:center;gap:8px}
+.btn-amarelo-sm:hover{background:var(--amarelo-2)}
+.btn-linha-sm{border:2px solid var(--linha);color:var(--branco);padding:9px 20px;font-size:14px;display:inline-flex;align-items:center;gap:8px}
+.btn-linha-sm:hover{border-color:var(--amarelo);color:var(--amarelo)}
+
+/* CTA band */
+.cta-band{background:var(--amarelo);color:var(--preto)}
+.cta-band .wrap{padding-top:64px;padding-bottom:64px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap}
+.cta-band h2{font-size:clamp(28px,3.4vw,44px);font-weight:800;letter-spacing:-1px;margin-bottom:6px}
+.cta-band p{font-size:17px;font-weight:500;color:#2A2A2A}
+.cta-btn{background:var(--preto);color:var(--amarelo);padding:18px 34px;font-size:18px;display:inline-flex;align-items:center;gap:10px}
+.cta-btn svg{width:20px}
+.cta-btn:hover{background:#1c1c1c;box-shadow:0 16px 34px rgba(0,0,0,.35)}
+
+/* Footer */
+footer{background:var(--preto)}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-top:72px;padding-bottom:40px;border-bottom:1px solid var(--linha)}
+.footer-brand p{color:var(--cinza-escuro);font-size:14px;line-height:1.6;margin:16px 0 22px;max-width:280px}
+.footer-social{display:flex;gap:12px}
+.footer-social a{width:42px;height:42px;border-radius:50%;background:#1c1c1c;border:1px solid var(--linha);display:flex;align-items:center;justify-content:center;transition:background .3s var(--ease),border-color .3s var(--ease)}
+.footer-social a svg{width:19px;color:var(--amarelo);transition:color .3s var(--ease)}
+.footer-social a:hover{background:var(--amarelo);border-color:var(--amarelo)}
+.footer-social a:hover svg{color:var(--preto)}
+.footer-col h4{color:var(--branco);font-size:15px;font-weight:700;letter-spacing:1px;margin-bottom:18px}
+.footer-col p{font-size:14px;color:var(--cinza-escuro);line-height:1.6;margin-bottom:12px}
+.footer-col a{color:var(--cinza-escuro);text-decoration:none;transition:color .3s var(--ease)}
+.footer-col a:hover{color:var(--amarelo)}
+.footer-bottom .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-top:24px;padding-bottom:24px;font-size:13px;color:var(--cinza-escuro)}
+.footer-bottom a{color:var(--cinza-escuro);text-decoration:none;transition:color .3s var(--ease)}
+.footer-bottom a:hover{color:var(--amarelo)}
+
+/* Botão flutuante WhatsApp + voltar ao topo */
+.float-stack{position:fixed;right:24px;bottom:24px;z-index:1000;display:flex;flex-direction:column;align-items:flex-end;gap:14px}
+.fab{width:60px;height:60px;border-radius:50%;background:var(--amarelo);color:var(--preto);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 14px 30px rgba(251,187,27,.35);transition:transform .3s var(--ease);animation:pulse 2.6s infinite}
+.fab:hover{transform:scale(1.07)}
+.fab svg{width:26px}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(251,187,27,.5)}70%{box-shadow:0 0 0 16px rgba(251,187,27,0)}100%{box-shadow:0 0 0 0 rgba(251,187,27,0)}}
+.top-btn{width:46px;height:46px;border-radius:50%;background:#1c1c1c;border:1px solid var(--linha);color:var(--amarelo);cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .3s var(--ease),transform .3s var(--ease),visibility .3s var(--ease),background .3s var(--ease)}
+.top-btn.is-visible{opacity:1;visibility:visible;transform:translateY(0)}
+.top-btn:hover{background:var(--amarelo);color:var(--preto)}
+.top-btn svg{width:18px}
+
+/* Modal de escolha de unidade */
+.wa-modal{position:fixed;inset:0;z-index:2000;display:flex;align-items:center;justify-content:center;padding:20px;visibility:hidden;opacity:0;transition:opacity .3s var(--ease),visibility .3s var(--ease)}
+.wa-modal.is-open{visibility:visible;opacity:1}
+.wa-modal__backdrop{position:absolute;inset:0;background:rgba(10,10,10,.75);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+.wa-modal__panel{position:relative;background:var(--card);border:1px solid var(--linha);border-radius:var(--radius);padding:36px;width:100%;max-width:420px;display:flex;flex-direction:column;gap:14px;box-shadow:var(--shadow);transform:translateY(16px) scale(.97);transition:transform .3s var(--ease)}
+.wa-modal.is-open .wa-modal__panel{transform:translateY(0) scale(1)}
+.wa-modal__close{position:absolute;top:16px;right:16px;width:34px;height:34px;border-radius:50%;background:#1c1c1c;border:1px solid var(--linha);color:var(--cinza);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s var(--ease),color .2s var(--ease)}
+.wa-modal__close:hover{background:var(--amarelo);color:var(--preto)}
+.wa-modal__close svg{width:16px}
+.wa-modal__title{font-family:'Poppins',sans-serif;font-weight:700;font-size:19px;color:var(--branco);padding-right:30px}
+.wa-modal__option{display:flex;align-items:center;gap:14px;background:#1c1c1c;border:2px solid var(--linha);border-radius:var(--radius-sm);padding:16px 18px;cursor:pointer;text-align:left;transition:border-color .25s var(--ease),background .25s var(--ease),transform .25s var(--ease)}
+.wa-modal__option:hover{border-color:var(--amarelo);background:#222;transform:translateX(4px)}
+.wa-modal__option-ico{width:44px;height:44px;border-radius:12px;background:var(--amarelo);color:var(--preto);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.wa-modal__option-ico svg{width:22px}
+.wa-modal__option-txt{display:flex;flex-direction:column;gap:2px}
+.wa-modal__option-txt strong{font-size:16px;color:var(--branco)}
+.wa-modal__option-txt small{font-size:13px;color:var(--cinza-escuro)}
+
+/* Celular */
+@media (max-width:900px){
+  nav.nav{display:none}
+  .hamburger{display:flex}
+  .hero .wrap,.hidrogel .wrap,.parcel .wrap{grid-template-columns:1fr;gap:40px}
+  .hero-media{order:-1;max-width:360px;margin:0 auto}
+  .hidrogel-arte{max-width:380px}
+  .float-badge{padding:8px 12px 8px 8px;font-size:12px;gap:6px}
+  .float-badge__ico{width:22px;height:22px}
+  .float-badge__ico svg{width:12px}
+  .grid3{grid-template-columns:1fr}
+  .unid-grid{grid-template-columns:1fr}
+  .tag{display:none}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:32px}
+}
+@media (max-width:560px){
+  .cards{grid-template-columns:1fr}
+  .card{min-height:280px}
+  .chip-a,.chip-b{font-size:15px;padding:12px 18px}
+  .cta-band .wrap{flex-direction:column;align-items:flex-start}
+  .footer-grid{grid-template-columns:1fr}
+  .float-stack{right:16px;bottom:16px}
+}
+</style>
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+
+<header id="header">
+  <div class="wrap">
+    <a class="logo" href="#" aria-label="Cellfie, página inicial">
+      <img src="logo-curta.jpeg" alt="Cellfie">
+      <span><b>CELLFIE</b></span>
+    </a>
+
+    <nav class="nav" id="nav">
+      <a href="#">Início</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#unidades">Unidades</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="pill chip-a wa-trigger" style="padding:12px 22px;font-size:15px" data-msg="Olá! Vim pelo site da Cellfie.">Fale no WhatsApp</button>
+      <span class="tag">ACESSÓRIOS · ASSISTÊNCIA</span>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#">Início</a>
+  <a href="#servicos">Serviços</a>
+  <a href="#unidades">Unidades</a>
+  <button class="pill chip-a wa-trigger" style="margin-top:12px" data-msg="Olá! Vim pelo site da Cellfie.">Fale no WhatsApp</button>
+</div>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-txt">
+      <span class="local" data-reveal>PILARZINHO &amp; BARREIRINHA · CURITIBA</span>
+      <h1 data-reveal style="--i:1">Seu celular<br>em boas <span>mãos.</span></h1>
+      <p data-reveal style="--i:2">Celulares, acessórios e assistência técnica — tudo num só lugar, pertinho de você.</p>
+      <div class="chips" data-reveal style="--i:3">
+        <button class="pill chip-a wa-trigger" data-msg="Olá! Quero comprar um celular parcelado no boleto.">Parcela no boleto*</button>
+      </div>
+      <span class="nota" data-reveal style="--i:4">*Sem consulta ao SPC e Serasa. Válido apenas para celulares novos.</span>
+    </div>
+    <div class="hero-media">
+      <div class="orbit-ring"></div>
+      <svg class="hero-arte" viewBox="0 0 560 640" aria-hidden="true">
+        <circle cx="300" cy="330" r="250" fill="#FBBB1B"/>
+        <g transform="rotate(-8 280 320)">
+          <rect x="150" y="60" width="260" height="520" rx="44" fill="#141414" stroke="#333" stroke-width="4"/>
+          <rect x="166" y="76" width="228" height="488" rx="32" fill="#1C1C1C"/>
+          <rect x="245" y="92" width="70" height="20" rx="10" fill="#0A0A0A"/>
+        </g>
+      </svg>
+      <div class="hero-glow"></div>
+      <img class="hero-logo" src="logo-curta.jpeg" alt="Cellfie">
+
+      <button class="float-badge float-badge--1 wa-trigger" data-msg="Olá! Quero saber sobre celulares disponíveis.">
+        <span class="float-badge__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg></span>
+        Celulares
+      </button>
+      <button class="float-badge float-badge--2 wa-trigger" data-msg="Olá! Preciso de assistência técnica para meu celular.">
+        <span class="float-badge__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg></span>
+        Assistência técnica
+      </button>
+      <button class="float-badge float-badge--3 wa-trigger" data-msg="Olá! Gostaria de ver os acessórios disponíveis.">
+        <span class="float-badge__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14v-2a9 9 0 0 1 18 0v2"/><rect x="3" y="14" width="4" height="7" rx="1.5"/><rect x="17" y="14" width="4" height="7" rx="1.5"/></svg></span>
+        Acessórios
+      </button>
+    </div>
+  </div>
+</section>
+
+<div class="marquee">
+  <div class="marquee-track">
+    <span>
+      <b>GARANTIA</b> NOS SERVIÇOS • PARCELAMENTO NO BOLETO SEM CONSULTA • 2 UNIDADES EM CURITIBA • PELÍCULA DE HIDROGEL NA HORA • ASSISTÊNCIA TÉCNICA ESPECIALIZADA •
+    </span>
+    <span aria-hidden="true">
+      <b>GARANTIA</b> NOS SERVIÇOS • PARCELAMENTO NO BOLETO SEM CONSULTA • 2 UNIDADES EM CURITIBA • PELÍCULA DE HIDROGEL NA HORA • ASSISTÊNCIA TÉCNICA ESPECIALIZADA •
+    </span>
+  </div>
+</div>
+
+<section class="hidrogel" id="pelicula">
+  <div class="wrap">
+    <div class="sec-txt" data-reveal>
+      <span class="kicker">FEITA NA HORA, SOB MEDIDA</span>
+      <h2>Película de hidrogel recortada na hora.</h2>
+      <p>Para todo tipo de celular, smartwatch, tela de câmera e muito mais. Também temos película 3D.</p>
+      <button class="pill btn-preto wa-trigger" data-msg="Olá! Quero colocar película de hidrogel no meu aparelho.">Traga seu aparelho</button>
+    </div>
+    <svg class="hidrogel-arte" data-reveal style="--i:1" viewBox="0 0 520 460" aria-hidden="true">
+      <rect x="40" y="20" width="210" height="420" rx="36" fill="#0A0A0A"/>
+      <rect x="54" y="34" width="182" height="392" rx="26" fill="#1C1C1C"/>
+      <rect x="24" y="4" width="242" height="452" rx="46" fill="none" stroke="#0A0A0A" stroke-width="3" stroke-dasharray="12 10"/>
+      <g transform="translate(118 196)"><path d="M32 4 H14 A10 10 0 0 0 4 14 V52 A10 10 0 0 0 14 62 H40 A10 10 0 0 0 50 52 V28" fill="none" stroke="#FBBB1B" stroke-width="6" stroke-linecap="round"/><circle cx="47" cy="14" r="5" fill="#FBBB1B"/></g>
+      <g transform="translate(320 40)"><rect x="30" y="0" width="80" height="30" rx="8" fill="#0A0A0A"/><rect x="30" y="150" width="80" height="30" rx="8" fill="#0A0A0A"/><rect x="10" y="24" width="120" height="132" rx="30" fill="#0A0A0A"/><rect x="22" y="36" width="96" height="108" rx="22" fill="#1C1C1C"/><rect x="0" y="14" width="140" height="152" rx="38" fill="none" stroke="#0A0A0A" stroke-width="3" stroke-dasharray="10 8"/></g>
+      <g transform="translate(300 270)"><rect x="0" y="30" width="190" height="130" rx="18" fill="#0A0A0A"/><rect x="24" y="12" width="56" height="26" rx="6" fill="#0A0A0A"/><rect x="18" y="52" width="154" height="92" rx="8" fill="#1C1C1C"/><rect x="8" y="42" width="174" height="112" rx="12" fill="none" stroke="#FBBB1B" stroke-width="3" stroke-dasharray="10 8"/></g>
+    </svg>
+  </div>
+</section>
+
+<section class="parcel" id="parcelamento">
+  <div class="wrap">
+    <div class="sec-txt" data-reveal>
+      <span class="kicker">CELULAR NOVO SEM APERTO</span>
+      <h2>Parcele no boleto.</h2>
+      <p>Compre seu celular novo com pagamento facilitado, sem burocracia.</p>
+    </div>
+    <div class="cards">
+      <button class="card card-a boleto-card wa-trigger" data-reveal style="--i:1" data-msg="Olá! Quero comprar um celular parcelado no boleto.">
+        <div class="boleto-top">
+          <span class="rot">PAGAMENTO FACILITADO</span>
+          <svg class="boleto-barcode" viewBox="0 0 100 28" aria-hidden="true">
+            <rect x="0" y="0" width="2" height="28"/><rect x="4" y="0" width="1" height="28"/><rect x="7" y="0" width="3" height="28"/><rect x="12" y="0" width="1" height="28"/><rect x="15" y="0" width="2" height="28"/><rect x="19" y="0" width="1" height="28"/><rect x="22" y="0" width="4" height="28"/><rect x="28" y="0" width="1" height="28"/><rect x="31" y="0" width="2" height="28"/><rect x="35" y="0" width="1" height="28"/><rect x="38" y="0" width="3" height="28"/><rect x="43" y="0" width="1" height="28"/><rect x="46" y="0" width="2" height="28"/><rect x="50" y="0" width="1" height="28"/><rect x="53" y="0" width="4" height="28"/><rect x="59" y="0" width="1" height="28"/><rect x="62" y="0" width="2" height="28"/><rect x="66" y="0" width="1" height="28"/><rect x="69" y="0" width="3" height="28"/><rect x="74" y="0" width="1" height="28"/><rect x="77" y="0" width="2" height="28"/><rect x="81" y="0" width="1" height="28"/><rect x="84" y="0" width="4" height="28"/><rect x="90" y="0" width="1" height="28"/><rect x="93" y="0" width="2" height="28"/><rect x="97" y="0" width="1" height="28"/>
+          </svg>
+        </div>
+        <h3 class="boleto-title">Parcele seu celular novo no boleto</h3>
+        <ul class="boleto-benefits">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Sem consulta ao SPC e Serasa</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Aprovação rápida, sem burocracia</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Válido apenas para celulares novos</li>
+        </ul>
+        <span class="desc">Fale com a gente e simule agora
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="servicos" id="servicos">
+  <div class="wrap">
+    <div class="serv-topo" data-reveal>
+      <h2>Tudo pro seu celular,<br>num só lugar.</h2>
+      <span class="kicker">PILARZINHO &amp; BARREIRINHA</span>
+    </div>
+    <div class="grid3">
+      <button class="serv wa-trigger" data-reveal style="--i:1" data-msg="Olá! Quero saber sobre celulares disponíveis.">
+        <div class="ico"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg></div>
+        <h3>Celulares</h3>
+        <p>Aparelhos novos e seminovos. Parcelamento no boleto exclusivo para novos.</p>
+        <span class="serv-cta">Ver ofertas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </button>
+      <button class="serv wa-trigger" data-reveal style="--i:2" data-msg="Olá! Gostaria de ver os acessórios disponíveis.">
+        <div class="ico"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 14v-2a9 9 0 0 1 18 0v2"/><rect x="3" y="14" width="4" height="7" rx="1.5"/><rect x="17" y="14" width="4" height="7" rx="1.5"/></svg></div>
+        <h3>Acessórios</h3>
+        <p>Fones, capas, carregadores e películas de hidrogel e 3D.</p>
+        <span class="serv-cta">Ver acessórios <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </button>
+      <button class="serv destaque wa-trigger" data-reveal style="--i:3" data-msg="Olá! Preciso de assistência técnica para meu celular.">
+        <div class="ico"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#FBBB1B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg></div>
+        <h3>Assistência técnica</h3>
+        <p>Conserto e manutenção do seu aparelho com quem entende, com garantia.</p>
+        <span class="serv-cta">Pedir orçamento <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="unidades" id="unidades">
+  <div class="wrap">
+    <div class="unid-topo" data-reveal>
+      <h2>Nossas duas lojas<br>em Curitiba.</h2>
+      <span class="kicker">ONDE ESTAMOS</span>
+    </div>
+    <div class="unid-grid">
+      <div class="unit-card" data-reveal style="--i:1">
+        <div class="unit-map">
+          <iframe title="Mapa Cellfie Smart - Unidade Pilarzinho" src="https://maps.google.com/maps?q=R.%20Amauri%20Lange%20Silv%C3%A9rio%2C%20860%2C%20Pilarzinho%2C%20Curitiba%20-%20PR%2C%2082120-000&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="unit-body">
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l1-5h16l1 5"/><path d="M4 9v10a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V9"/><path d="M9 21V13h6v8"/></svg> Unidade Pilarzinho</h3>
+          <p class="unit-addr">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-7.5 7-12a7 7 0 1 0-14 0c0 4.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            R. Amauri Lange Silvério, 860 - Pilarzinho, Curitiba - PR, 82120-000
+          </p>
+          <p class="unit-phone">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.35 0-2.62-.32-3.75-.9L3 21l1.9-5.7A8.5 8.5 0 1 1 21 11.5z"/></svg>
+            (41) 99702-3133
+          </p>
+          <div class="unit-actions">
+            <a class="pill btn-amarelo-sm" href="https://wa.me/5541997023133" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.35 0-2.62-.32-3.75-.9L3 21l1.9-5.7A8.5 8.5 0 1 1 21 11.5z"/></svg>
+              Chamar no WhatsApp
+            </a>
+            <a class="pill btn-linha-sm" href="https://maps.google.com/maps?q=R.%20Amauri%20Lange%20Silv%C3%A9rio%2C%20860%2C%20Pilarzinho%2C%20Curitiba%20-%20PR%2C%2082120-000" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              Como chegar
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="unit-card" data-reveal style="--i:2">
+        <div class="unit-map">
+          <iframe title="Mapa Cellfie Smart - Unidade Barreirinha" src="https://maps.google.com/maps?q=Av.%20Anita%20Garibaldi%2C%206148%2C%20Barreirinha%2C%20Curitiba%20-%20PR%2C%2082220-000&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="unit-body">
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l1-5h16l1 5"/><path d="M4 9v10a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V9"/><path d="M9 21V13h6v8"/></svg> Unidade Barreirinha</h3>
+          <p class="unit-addr">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-7.5 7-12a7 7 0 1 0-14 0c0 4.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            <span>Av. Anita Garibaldi, 6148 - Barreirinha, Curitiba - PR, 82220-000<span class="unit-note">(dentro do Mercado Condor)</span></span>
+          </p>
+          <p class="unit-phone">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.35 0-2.62-.32-3.75-.9L3 21l1.9-5.7A8.5 8.5 0 1 1 21 11.5z"/></svg>
+            (41) 99805-4597
+          </p>
+          <div class="unit-actions">
+            <a class="pill btn-amarelo-sm" href="https://wa.me/5541998054597" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.35 0-2.62-.32-3.75-.9L3 21l1.9-5.7A8.5 8.5 0 1 1 21 11.5z"/></svg>
+              Chamar no WhatsApp
+            </a>
+            <a class="pill btn-linha-sm" href="https://maps.google.com/maps?q=Av.%20Anita%20Garibaldi%2C%206148%2C%20Barreirinha%2C%20Curitiba%20-%20PR%2C%2082220-000" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              Como chegar
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap" data-reveal>
+    <div>
+      <h2>Precisa resolver seu celular hoje?</h2>
+      <p>Fale agora com a nossa equipe e receba atendimento rápido, sem compromisso.</p>
+    </div>
+    <button class="pill cta-btn wa-trigger" data-msg="Olá! Vim pelo site e preciso de atendimento.">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.35 0-2.62-.32-3.75-.9L3 21l1.9-5.7A8.5 8.5 0 1 1 21 11.5z"/></svg>
+      Falar com um especialista
+    </button>
+  </div>
+</section>
+</main>
+
+<footer id="contato">
+  <div class="wrap footer-grid">
+    <div class="footer-col footer-brand">
+      <a href="#" class="footer-logo" aria-label="Cellfie, página inicial">
+        <img src="logo-oficial-completa.jpeg" alt="Cellfie - Assistência e Acessórios">
+      </a>
+      <p>Acessórios e Eletrônicos. Venda de celulares, assistência técnica e acessórios em Curitiba - PR.</p>
+      <div class="footer-social">
+        <a href="https://instagram.com/cellfiesmart" target="_blank" rel="noopener" aria-label="Instagram Cellfie Smart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+        </a>
+        <a href="https://tiktok.com/@cellfie0" target="_blank" rel="noopener" aria-label="TikTok Cellfie Smart">
+          <svg viewBox="0 0 448 512" fill="currentColor"><path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>UNIDADE PILARZINHO</h4>
+      <p>R. Amauri Lange Silvério, 860<br>Pilarzinho, Curitiba - PR<br>82120-000</p>
+      <p><a href="https://wa.me/5541997023133" target="_blank" rel="noopener">(41) 99702-3133</a></p>
+      <p><a href="https://instagram.com/cellfiesmart" target="_blank" rel="noopener">@cellfiesmart</a></p>
+    </div>
+
+    <div class="footer-col">
+      <h4>UNIDADE BARREIRINHA</h4>
+      <p>Av. Anita Garibaldi, 6148<br>Barreirinha, Curitiba - PR<br>82220-000 (Mercado Condor)</p>
+      <p><a href="https://wa.me/5541998054597" target="_blank" rel="noopener">(41) 99805-4597</a></p>
+      <p><a href="https://instagram.com/cellfie_barreirinha" target="_blank" rel="noopener">@cellfie_barreirinha</a></p>
+    </div>
+
+    <div class="footer-col">
+      <h4>NAVEGAÇÃO</h4>
+      <p><a href="#pelicula">Película</a></p>
+      <p><a href="#parcelamento">Parcelamento</a></p>
+      <p><a href="#servicos">Serviços</a></p>
+      <p><a href="#unidades">Unidades</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="wrap">
+      <span>&copy; <span id="year"></span> Cellfie Smart Acessórios e Eletrônicos. Todos os direitos reservados.</span>
+      <span><a href="privacidade.html">Privacidade</a> · <a href="termos.html">Termos de Uso</a> · <a href="trocas-garantia.html">Trocas e Garantia</a></span>
+    </div>
+  </div>
+</footer>
+
+<div class="float-stack">
+  <button class="fab wa-trigger" data-msg="Olá! Vim pelo site da Cellfie." aria-label="Falar no WhatsApp">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.35 0-2.62-.32-3.75-.9L3 21l1.9-5.7A8.5 8.5 0 1 1 21 11.5z"/></svg>
+  </button>
+  <button class="top-btn" id="topBtn" aria-label="Voltar ao topo">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+</div>
+
+<div class="wa-modal" id="waModal">
+  <div class="wa-modal__backdrop" id="waBackdrop"></div>
+  <div class="wa-modal__panel" role="dialog" aria-modal="true" aria-labelledby="waModalTitle">
+    <button class="wa-modal__close" id="waClose" aria-label="Fechar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+    <span class="wa-modal__title" id="waModalTitle">De qual unidade você quer falar?</span>
+    <button class="wa-modal__option" data-numero="5541997023133">
+      <span class="wa-modal__option-ico">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l1-5h16l1 5"/><path d="M4 9v10a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V9"/><path d="M9 21V13h6v8"/></svg>
+      </span>
+      <span class="wa-modal__option-txt">
+        <strong>Pilarzinho</strong>
+        <small>R. Amauri Lange Silvério, 860</small>
+      </span>
+    </button>
+    <button class="wa-modal__option" data-numero="5541998054597">
+      <span class="wa-modal__option-ico">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l1-5h16l1 5"/><path d="M4 9v10a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V9"/><path d="M9 21V13h6v8"/></svg>
+      </span>
+      <span class="wa-modal__option-txt">
+        <strong>Barreirinha</strong>
+        <small>Av. Anita Garibaldi, 6148 (Condor)</small>
+      </span>
+    </button>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const header = document.getElementById('header');
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const topBtn = document.getElementById('topBtn');
+  const waModal = document.getElementById('waModal');
+  const waBackdrop = document.getElementById('waBackdrop');
+  const waClose = document.getElementById('waClose');
+  const progress = document.getElementById('progress');
+  const yearEl = document.getElementById('year');
+
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  // Header, progresso e botão de topo ao rolar
+  const onScroll = () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    header.classList.toggle('is-scrolled', scrollTop > 20);
+    topBtn.classList.toggle('is-visible', scrollTop > 500);
+    progress.style.width = (docHeight > 0 ? (scrollTop / docHeight) * 100 : 0) + '%';
+  };
+  window.addEventListener('scroll', onScroll);
+  onScroll();
+
+  // Menu mobile
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('is-open');
+    hamburger.classList.toggle('is-active', isOpen);
+    hamburger.setAttribute('aria-expanded', String(isOpen));
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+  mobileMenu.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('is-open');
+      hamburger.classList.remove('is-active');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
+  });
+
+  // Modal "escolha a unidade" para todos os botões de WhatsApp
+  let pendingMsg = '';
+  const openWaModal = (msg) => {
+    pendingMsg = msg || '';
+    waModal.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  };
+  const closeWaModal = () => {
+    waModal.classList.remove('is-open');
+    document.body.style.overflow = '';
+  };
+  document.querySelectorAll('.wa-trigger').forEach((el) => {
+    el.addEventListener('click', () => openWaModal(el.dataset.msg));
+  });
+  document.querySelectorAll('.wa-modal__option').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const url = 'https://wa.me/' + btn.dataset.numero + (pendingMsg ? ('?text=' + encodeURIComponent(pendingMsg)) : '');
+      window.open(url, '_blank', 'noopener');
+      closeWaModal();
+    });
+  });
+  waBackdrop.addEventListener('click', closeWaModal);
+  waClose.addEventListener('click', closeWaModal);
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeWaModal();
+  });
+
+  // Voltar ao topo
+  topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  // Revelação suave dos elementos ao rolar
+  // Parallax 3D do celular no herói, seguindo o mouse
+  const heroSection = document.querySelector('.hero');
+  const heroMedia = document.querySelector('.hero-media');
+  if (heroSection && heroMedia && window.matchMedia('(hover: hover)').matches) {
+    heroSection.addEventListener('mousemove', (event) => {
+      const rect = heroSection.getBoundingClientRect();
+      const px = (event.clientX - rect.left) / rect.width - 0.5;
+      const py = (event.clientY - rect.top) / rect.height - 0.5;
+      heroMedia.style.transform = `rotateY(${px * 16}deg) rotateX(${py * -16}deg) scale(1.03)`;
+    });
+    heroSection.addEventListener('mouseleave', () => {
+      heroMedia.style.transform = '';
+    });
+  }
+
+  const revealTargets = document.querySelectorAll('[data-reveal]');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealTargets.forEach((el) => revealObserver.observe(el));
+});
+</script>
+
+</body>
+</html>
