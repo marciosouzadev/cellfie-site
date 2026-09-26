@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Política de Privacidade | Cellfie Smart</title>
 <meta name="description" content="Política de Privacidade da Cellfie Smart Acessórios e Eletrônicos.">
 <link rel="icon" type="image/jpeg" href="logo-curta.jpeg">
@@ -14,21 +14,25 @@
 <style>
 :root{--preto:#0A0A0A;--amarelo:#FBBB1B;--claro:#F4F4F1;--cinza-escuro:#5a5a5a;--linha:#e2e0da}
 *{box-sizing:border-box}
+html,body{max-width:100%;overflow-x:hidden}
 body{margin:0;font-family:'Poppins',system-ui,sans-serif;background:var(--claro);color:var(--preto)}
-.wrap{max-width:760px;margin:0 auto;padding:0 clamp(20px,6vw,40px)}
+img,svg{max-width:100%;height:auto;display:block}
+:focus-visible{outline:3px solid #0A0A0A;outline-offset:2px;box-shadow:0 0 0 5px #fff}
+.wrap{max-width:760px;margin:0 auto;padding:0 clamp(20px,6vw,40px);padding-left:max(env(safe-area-inset-left),clamp(20px,6vw,40px));padding-right:max(env(safe-area-inset-right),clamp(20px,6vw,40px))}
 header{background:var(--preto);padding:22px 0}
 header .wrap{display:flex;align-items:center;justify-content:space-between}
 .logo{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-weight:800;letter-spacing:2px}
-.logo img{height:36px;border-radius:6px}
-.back{color:var(--amarelo);text-decoration:none;font-weight:600;font-size:14px}
+.logo img{height:36px;width:auto;border-radius:6px}
+.back{color:var(--amarelo);text-decoration:none;font-weight:600;font-size:14px;padding:12px 0;display:inline-flex;align-items:center}
 main{padding:48px 0 64px}
 h1{font-size:clamp(28px,4vw,40px);font-weight:800;letter-spacing:-1px;margin:0 0 6px}
 .updated{color:var(--cinza-escuro);font-size:14px;margin-bottom:36px}
 h2{font-size:20px;font-weight:700;margin:36px 0 12px}
-p,li{font-size:15.5px;line-height:1.7;color:#222}
+p,li{font-size:16px;line-height:1.7;color:#222}
 ul{padding-left:20px}
 li{margin-bottom:8px}
-table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14.5px}
+.table-wrap{overflow-x:auto;margin:16px 0;-webkit-overflow-scrolling:touch}
+table{width:100%;min-width:560px;border-collapse:collapse;font-size:14.5px}
 th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--linha);vertical-align:top}
 th{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--cinza-escuro)}
 mark{background:rgba(251,187,27,.35);color:var(--preto);padding:1px 6px;border-radius:4px;font-weight:600;font-style:normal}
@@ -42,7 +46,7 @@ footer a{color:var(--amarelo);text-decoration:none}
 
 <header>
   <div class="wrap">
-    <a class="logo" href="index.html"><img src="logo-curta.jpeg" alt="Cellfie"> CELLFIE</a>
+    <a class="logo" href="index.html"><img src="logo-curta.jpeg" alt="Cellfie" width="459" height="511"> CELLFIE</a>
     <a class="back" href="index.html">&larr; Voltar ao site</a>
   </div>
 </header>
@@ -67,6 +71,7 @@ footer a{color:var(--amarelo);text-decoration:none}
     <p>Este site é uma vitrine institucional. Ele não coleta seus dados diretamente: não existe cadastro, login, carrinho de compras ou cookies de rastreamento colocados por nós. Os únicos pontos em que dados pessoais circulam estão descritos abaixo.</p>
 
     <h2>3. Quais dados tratamos, para quê e com que base legal</h2>
+    <div class="table-wrap">
     <table>
       <tr><th>Dado</th><th>Quando acontece</th><th>Finalidade</th><th>Base legal (LGPD)</th></tr>
       <tr>
@@ -88,6 +93,7 @@ footer a{color:var(--amarelo);text-decoration:none}
         <td>Legítimo interesse / execução regida pela política do Google</td>
       </tr>
     </table>
+    </div>
     <p>Não coletamos dados sensíveis (saúde, origem racial, opinião política, etc.) e não fazemos nenhum tipo de perfilamento ou venda de dados.</p>
 
     <h2>4. Com quem compartilhamos</h2>
