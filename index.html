@@ -30,7 +30,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --preto:#0A0A0A;--amarelo:#FBBB1B;--amarelo-2:#D59F17;--branco:#FFFFFF;
+  --preto:#0A0A0A;--amarelo:#FFC933;--amarelo-2:#E1B12D;--branco:#FFFFFF;
   --cinza:#C8C8C8;--cinza-escuro:#9A9A9A;--claro:#F4F4F1;--card:#161616;--linha:#2A2A2A;
   --radius:28px;--radius-sm:18px;
   --shadow:0 24px 48px rgba(0,0,0,.4);
@@ -102,7 +102,7 @@ nav.nav a:hover::after{width:100%;left:0}
 .hero p{font-size:clamp(16px,1.6vw,22px);line-height:1.5;color:var(--cinza);max-width:560px}
 .chips{display:flex;gap:14px;flex-wrap:wrap}
 .chip-a{background:var(--amarelo);color:var(--preto);padding:14px 26px;font-size:18px}
-.chip-a:hover{background:var(--amarelo-2);box-shadow:0 16px 34px rgba(251,187,27,.28)}
+.chip-a:hover{background:var(--amarelo-2);box-shadow:0 16px 34px rgba(255,201,51,.28)}
 .chip-b{border:2px solid var(--amarelo);color:var(--amarelo);padding:12px 26px;font-size:18px;background:transparent}
 .chip-b:hover{background:var(--amarelo);color:var(--preto)}
 .nota{font-size:14px;color:var(--cinza-escuro)}
@@ -110,10 +110,10 @@ nav.nav a:hover::after{width:100%;left:0}
 .hero:hover .hero-media{transform:rotate(2deg) scale(1.02)}
 .hero-arte{width:100%;display:block;position:relative}
 .hero-logo{position:absolute;top:50%;left:50%;width:34%;transform:translate(-50%,-50%) rotate(-8deg);mix-blend-mode:lighten;pointer-events:none}
-.orbit-ring{position:absolute;top:50%;left:50%;width:112%;aspect-ratio:1;transform:translate(-50%,-50%);border:2px dashed rgba(251,187,27,.35);border-radius:50%;animation:spin 42s linear infinite;pointer-events:none}
-.orbit-ring::before{content:'';position:absolute;top:-4px;left:50%;width:8px;height:8px;margin-left:-4px;background:var(--amarelo);border-radius:50%;box-shadow:0 0 12px rgba(251,187,27,.8)}
+.orbit-ring{position:absolute;top:50%;left:50%;width:112%;aspect-ratio:1;transform:translate(-50%,-50%);border:2px dashed rgba(255,201,51,.35);border-radius:50%;animation:spin 42s linear infinite;pointer-events:none}
+.orbit-ring::before{content:'';position:absolute;top:-4px;left:50%;width:8px;height:8px;margin-left:-4px;background:var(--amarelo);border-radius:50%;box-shadow:0 0 12px rgba(255,201,51,.8)}
 @keyframes spin{to{transform:translate(-50%,-50%) rotate(360deg)}}
-.hero-glow{position:absolute;top:50%;left:50%;width:44%;aspect-ratio:1;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(251,187,27,.5),transparent 70%);filter:blur(8px);animation:glow 3.6s ease-in-out infinite;pointer-events:none}
+.hero-glow{position:absolute;top:50%;left:50%;width:44%;aspect-ratio:1;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(255,201,51,.5),transparent 70%);filter:blur(8px);animation:glow 3.6s ease-in-out infinite;pointer-events:none}
 @keyframes glow{0%,100%{opacity:.5;transform:translate(-50%,-50%) scale(1)}50%{opacity:.9;transform:translate(-50%,-50%) scale(1.15)}}
 .float-badge__ico{width:26px;height:26px;border-radius:50%;background:var(--amarelo);display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .float-badge__ico svg{width:14px;color:var(--preto)}
@@ -252,10 +252,10 @@ footer{background:var(--preto)}
 
 /* Botão flutuante WhatsApp + voltar ao topo */
 .float-stack{position:fixed;right:max(24px,env(safe-area-inset-right));bottom:max(24px,env(safe-area-inset-bottom));z-index:1000;display:flex;flex-direction:column;align-items:flex-end;gap:14px}
-.fab{width:60px;height:60px;border-radius:50%;background:var(--amarelo);color:var(--preto);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 14px 30px rgba(251,187,27,.35);transition:transform .3s var(--ease);animation:pulse 2.6s infinite}
+.fab{width:60px;height:60px;border-radius:50%;background:var(--amarelo);color:var(--preto);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 14px 30px rgba(255,201,51,.35);transition:transform .3s var(--ease);animation:pulse 2.6s infinite}
 .fab:hover{transform:scale(1.07)}
 .fab svg{width:26px}
-@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(251,187,27,.5)}70%{box-shadow:0 0 0 16px rgba(251,187,27,0)}100%{box-shadow:0 0 0 0 rgba(251,187,27,0)}}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,201,51,.5)}70%{box-shadow:0 0 0 16px rgba(255,201,51,0)}100%{box-shadow:0 0 0 0 rgba(255,201,51,0)}}
 .top-btn{width:46px;height:46px;border-radius:50%;background:#1c1c1c;border:1px solid var(--linha);color:var(--amarelo);cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .3s var(--ease),transform .3s var(--ease),visibility .3s var(--ease),background .3s var(--ease)}
 .top-btn.is-visible{opacity:1;visibility:visible;transform:translateY(0)}
 .top-btn:hover{background:var(--amarelo);color:var(--preto)}
@@ -360,7 +360,7 @@ footer{background:var(--preto)}
     <div class="hero-media">
       <div class="orbit-ring"></div>
       <svg class="hero-arte" viewBox="0 0 560 640" aria-hidden="true">
-        <circle cx="300" cy="330" r="250" fill="#FBBB1B"/>
+        <circle cx="300" cy="330" r="250" fill="#FFC933"/>
         <g transform="rotate(-8 280 320)">
           <rect x="150" y="60" width="260" height="520" rx="44" fill="#141414" stroke="#333" stroke-width="4"/>
           <rect x="166" y="76" width="228" height="488" rx="32" fill="#1C1C1C"/>
@@ -412,9 +412,9 @@ footer{background:var(--preto)}
       <rect x="40" y="20" width="210" height="420" rx="36" fill="#0A0A0A"/>
       <rect x="54" y="34" width="182" height="392" rx="26" fill="#1C1C1C"/>
       <rect x="24" y="4" width="242" height="452" rx="46" fill="none" stroke="#0A0A0A" stroke-width="3" stroke-dasharray="12 10"/>
-      <g transform="translate(118 196)"><path d="M32 4 H14 A10 10 0 0 0 4 14 V52 A10 10 0 0 0 14 62 H40 A10 10 0 0 0 50 52 V28" fill="none" stroke="#FBBB1B" stroke-width="6" stroke-linecap="round"/><circle cx="47" cy="14" r="5" fill="#FBBB1B"/></g>
+      <g transform="translate(118 196)"><path d="M32 4 H14 A10 10 0 0 0 4 14 V52 A10 10 0 0 0 14 62 H40 A10 10 0 0 0 50 52 V28" fill="none" stroke="#FFC933" stroke-width="6" stroke-linecap="round"/><circle cx="47" cy="14" r="5" fill="#FFC933"/></g>
       <g transform="translate(320 40)"><rect x="30" y="0" width="80" height="30" rx="8" fill="#0A0A0A"/><rect x="30" y="150" width="80" height="30" rx="8" fill="#0A0A0A"/><rect x="10" y="24" width="120" height="132" rx="30" fill="#0A0A0A"/><rect x="22" y="36" width="96" height="108" rx="22" fill="#1C1C1C"/><rect x="0" y="14" width="140" height="152" rx="38" fill="none" stroke="#0A0A0A" stroke-width="3" stroke-dasharray="10 8"/></g>
-      <g transform="translate(300 270)"><rect x="0" y="30" width="190" height="130" rx="18" fill="#0A0A0A"/><rect x="24" y="12" width="56" height="26" rx="6" fill="#0A0A0A"/><rect x="18" y="52" width="154" height="92" rx="8" fill="#1C1C1C"/><rect x="8" y="42" width="174" height="112" rx="12" fill="none" stroke="#FBBB1B" stroke-width="3" stroke-dasharray="10 8"/></g>
+      <g transform="translate(300 270)"><rect x="0" y="30" width="190" height="130" rx="18" fill="#0A0A0A"/><rect x="24" y="12" width="56" height="26" rx="6" fill="#0A0A0A"/><rect x="18" y="52" width="154" height="92" rx="8" fill="#1C1C1C"/><rect x="8" y="42" width="174" height="112" rx="12" fill="none" stroke="#FFC933" stroke-width="3" stroke-dasharray="10 8"/></g>
     </svg>
   </div>
 </section>
@@ -468,7 +468,7 @@ footer{background:var(--preto)}
         <span class="serv-cta">Ver acessórios <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </button>
       <button class="serv destaque wa-trigger" data-reveal style="--i:3" data-msg="Olá! Preciso de assistência técnica para meu celular.">
-        <div class="ico"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#FBBB1B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg></div>
+        <div class="ico"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#FFC933" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg></div>
         <h3>Assistência técnica</h3>
         <p>Conserto e manutenção do seu aparelho com quem entende, com garantia.</p>
         <span class="serv-cta">Pedir orçamento <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
