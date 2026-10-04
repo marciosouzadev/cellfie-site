@@ -279,6 +279,17 @@ footer{background:var(--preto)}
 .wa-modal__option-txt strong{font-size:16px;color:var(--branco)}
 .wa-modal__option-txt small{font-size:13px;color:var(--cinza-escuro)}
 
+/* Aviso de cookies */
+.cookie-bar{position:fixed;left:max(16px,env(safe-area-inset-left));bottom:max(16px,env(safe-area-inset-bottom));z-index:1500;max-width:360px;background:var(--card);border:1px solid var(--linha);border-radius:var(--radius-sm);padding:18px;display:flex;flex-direction:column;gap:12px;box-shadow:var(--shadow);transform:translateY(20px);opacity:0;visibility:hidden;transition:transform .4s var(--ease),opacity .4s var(--ease),visibility .4s var(--ease)}
+.cookie-bar.is-visible{transform:translateY(0);opacity:1;visibility:visible}
+.cookie-bar p{color:var(--cinza);font-size:13.5px;line-height:1.5;margin:0}
+.cookie-bar p a{color:var(--amarelo)}
+.cookie-bar__ok{align-self:flex-start;background:var(--amarelo);color:var(--preto);border:none;border-radius:999px;padding:10px 22px;font-weight:700;font-size:14px;cursor:pointer;min-height:44px;transition:background .2s var(--ease)}
+.cookie-bar__ok:hover{background:var(--amarelo-2)}
+@media (max-width:560px){
+  .cookie-bar{left:16px;right:16px;max-width:none;bottom:110px}
+}
+
 /* Celular */
 @media (max-width:900px){
   nav.nav{display:none}
@@ -642,6 +653,11 @@ footer{background:var(--preto)}
   </div>
 </div>
 
+<div class="cookie-bar" id="cookieBar">
+  <p>Este site usa cookies de terceiros (Google Fonts e Google Maps) para funcionar corretamente. <a href="privacidade.html">Saiba mais</a>.</p>
+  <button class="cookie-bar__ok" id="cookieOk">Entendi</button>
+</div>
+
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const header = document.getElementById('header');
@@ -712,6 +728,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Voltar ao topo
   topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  // Aviso de cookies (aparece uma vez, lembra via localStorage)
+  const cookieBar = document.getElementById('cookieBar');
+  const cookieOk = document.getElementById('cookieOk');
+  let cookieJaVisto = false;
+  try { cookieJaVisto = localStorage.getItem('cellfie_cookies_ok') === '1'; } catch (e) {}
+  if (cookieBar && !cookieJaVisto) {
+    setTimeout(() => cookieBar.classList.add('is-visible'), 1000);
+  }
+  if (cookieOk) {
+    cookieOk.addEventListener('click', () => {
+      cookieBar.classList.remove('is-visible');
+      try { localStorage.setItem('cellfie_cookies_ok', '1'); } catch (e) {}
+    });
+  }
 
   // Revelação suave dos elementos ao rolar
   // Parallax 3D do celular no herói, seguindo o mouse
