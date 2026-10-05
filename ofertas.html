@@ -66,6 +66,14 @@ header .wrap{display:flex;align-items:center;justify-content:space-between;gap:2
 .offer__body{padding:18px;display:flex;flex-direction:column;gap:12px}
 .offer__btn{justify-content:center;width:100%;padding:13px 20px;font-size:15px;min-height:44px}
 
+.cta-band{background:var(--amarelo);color:var(--preto)}
+.cta-band .wrap{padding:48px 0;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.cta-band h2{font-size:clamp(22px,2.6vw,32px);font-weight:800;letter-spacing:-.5px}
+.cta-band p{color:#2A2A2A;font-weight:500}
+.cta-band .pill{background:var(--preto);color:var(--amarelo);padding:16px 30px;font-size:16px}
+.cta-band .pill:hover{background:#1c1c1c}
+.cta-band .pill svg{width:20px}
+
 footer{background:var(--preto);border-top:1px solid var(--linha);padding:32px 0;font-size:13px;color:var(--cinza-escuro)}
 footer .wrap{display:flex;flex-wrap:wrap;gap:12px 20px;justify-content:space-between;align-items:center}
 footer a{color:var(--cinza-escuro);text-decoration:none}
@@ -90,7 +98,7 @@ footer a:hover{color:var(--amarelo)}
 .wa-modal__option-txt small{font-size:13px;color:var(--cinza-escuro)}
 
 @media (max-width:860px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:520px){.grid{grid-template-columns:1fr}}
+@media (max-width:520px){.grid{grid-template-columns:1fr}.cta-band .wrap{flex-direction:column;align-items:flex-start}}
 @media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
 </style>
 </head>
@@ -235,6 +243,19 @@ footer a:hover{color:var(--amarelo)}
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <div>
+      <h2>Temos mais opções em nossas lojas!</h2>
+      <p>Fale com a gente agora mesmo.</p>
+    </div>
+    <button class="pill wa-trigger" data-msg="Olá! Vim pela página de ofertas de Dia das Crianças, quero saber mais opções.">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.35 0-2.62-.32-3.75-.9L3 21l1.9-5.7A8.5 8.5 0 1 1 21 11.5z"/></svg>
+      Falar no WhatsApp
+    </button>
   </div>
 </section>
 
